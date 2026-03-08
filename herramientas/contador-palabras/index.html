@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Palabras Gratis | Mi Sitio</title>
+    <meta name="description" content="Cuenta palabras, caracteres y párrafos gratis. Sin registro, sin publicidad.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: Arial, sans-serif;
+            resize: vertical;
+            transition: border 0.3s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.8rem;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #764ba2;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: #667eea;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Contador de Palabras</h1>
+        <p class="subtitle">Cuenta palabras, caracteres y párrafos en tiempo real</p>
+
+        <textarea id="texto" placeholder="Pega o escribe tu texto aquí..."></textarea>
+
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-number" id="palabras">0</div>
+                <div class="stat-label">Palabras</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" id="caracteres">0</div>
+                <div class="stat-label">Caracteres (sin espacios)</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" id="caracteres-espacios">0</div>
+                <div class="stat-label">Caracteres (con espacios)</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" id="parrafos">0</div>
+                <div class="stat-label">Párrafos</div>
+            </div>
+        </div>
+
+        <button onclick="limpiar()">Limpiar</button>
+
+        <a href="/" class="back-link">← Volver al inicio</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
