@@ -5,7 +5,7 @@ const herramientas = [
         nombre: "Contador de Palabras",
         emoji: "📝",
         descripcion: "Cuenta palabras, caracteres y párrafos",
-        url: "/herramientas/contador-palabras/",
+        url: "herramientas/contador-palabras/index.html",
         categoria: "Texto",
         tags: ["texto", "contador", "caracteres"]
     },
