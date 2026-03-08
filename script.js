@@ -23,36 +23,9 @@ const herramientas = [
         nombre: "Convertidor Unidades",
         emoji: "⚖️",
         descripcion: "Convierte unidades de medida",
-        url: "/herramientas/convertidor-unidades/",
+        url: "/herramientas/conversor-unidades/",
         categoria: "Conversión",
         tags: ["conversor", "unidades", "medidas"]
-    },
-    {
-        id: 4,
-        nombre: "Generador Contraseñas",
-        emoji: "🔐",
-        descripcion: "Crea contraseñas seguras",
-        url: "/herramientas/generador-contrasenas/",
-        categoria: "Seguridad",
-        tags: ["contraseña", "seguridad", "generador"]
-    },
-    {
-        id: 5,
-        nombre: "Minificador JSON",
-        emoji: "📦",
-        descripcion: "Comprime y formatea JSON",
-        url: "/herramientas/minificador-json/",
-        categoria: "Desarrollo",
-        tags: ["json", "desarrollador", "codigo"]
-    },
-    {
-        id: 6,
-        nombre: "Base64 Encoder",
-        emoji: "🔤",
-        descripcion: "Codifica/decodifica Base64",
-        url: "/herramientas/base64-encoder/",
-        categoria: "Desarrollo",
-        tags: ["base64", "codificacion", "desarrollador"]
     },
 ];
 
@@ -78,15 +51,18 @@ function renderHerramientas(lista = herramientas) {
 }
 
 // Buscador
-document.getElementById('buscador').addEventListener('input', (e) => {
-    const query = e.target.value.toLowerCase();
-    const filtradas = herramientas.filter(tool => 
-        tool.nombre.toLowerCase().includes(query) ||
-        tool.descripcion.toLowerCase().includes(query) ||
-        tool.tags.some(tag => tag.includes(query))
-    );
-    renderHerramientas(filtradas);
-});
+const buscador = document.getElementById('buscador');
+if (buscador) {
+    buscador.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        const filtradas = herramientas.filter(tool => 
+            tool.nombre.toLowerCase().includes(query) ||
+            tool.descripcion.toLowerCase().includes(query) ||
+            tool.tags.some(tag => tag.includes(query))
+        );
+        renderHerramientas(filtradas);
+    });
+}
 
 // Renderizar al cargar
 renderHerramientas();
