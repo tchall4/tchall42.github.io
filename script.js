@@ -14,7 +14,7 @@ const herramientas = [
         nombre: "Generador QR",
         emoji: "📱",
         descripcion: "Genera códigos QR desde cualquier texto",
-        url: "/herramientas/generador-qr/",
+        url: "herramientas/generador-qr/index.html",
         categoria: "Diseño",
         tags: ["qr", "codigo", "generador"]
     },
@@ -23,7 +23,7 @@ const herramientas = [
         nombre: "Convertidor Unidades",
         emoji: "⚖️",
         descripcion: "Convierte unidades de medida",
-        url: "/herramientas/conversor-unidades/",
+        url: "herramientas/conversor-unidades/index.html",
         categoria: "Conversión",
         tags: ["conversor", "unidades", "medidas"]
     },
