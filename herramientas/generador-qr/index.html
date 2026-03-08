@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador QR Gratis | Mi Sitio</title>
+    <meta name="description" content="Genera códigos QR gratis sin registro. Descarga tu QR en PNG.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            resize: vertical;
+            transition: border 0.3s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .size-options {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .size-options label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+
+        .size-options input {
+            margin-right: 0.5rem;
+            cursor: pointer;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.8rem;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #764ba2;
+        }
+
+        #qr-output {
+            margin-top: 2rem;
+            text-align: center;
+            display: none;
+        }
+
+        #qr-output.show {
+            display: block;
+        }
+
+        #qr-code {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f0f0f0;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        #qr-code img {
+            display: block;
+        }
+
+        .download-btn {
+            background: #28a745;
+            margin-top: 1rem;
+        }
+
+        .download-btn:hover {
+            background: #218838;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📱 Generador de Códigos QR</h1>
+        <p class="subtitle">Crea códigos QR gratis al instante</p>
+
+        <div class="form-group">
+            <label for="qr-input">URL o Texto:</label>
+            <textarea id="qr-input" rows="3" placeholder="https://ejemplo.com o tu texto aquí"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Tamaño del QR:</label>
+            <div class="size-options">
+                <label><input type="radio" name="size" value="150"> Pequeño (150px)</label>
+                <label><input type="radio" name="size" value="250" checked> Mediano (250px)</label>
+                <label><input type="radio" name="size" value="400"> Grande (400px)</label>
+            </div>
+        </div>
+
+        <button onclick="generarQR()">Generar QR</button>
+
+        <div id="qr-output">
+            <div id="qr-code"></div>
+            <button class="download-btn" onclick="descargarQR()">⬇️ Descargar QR</button>
+        </div>
+
+        <a href="/" class="back-link">← Volver al inicio</a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
